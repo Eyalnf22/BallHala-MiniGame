@@ -1,0 +1,221 @@
+﻿
+
+.wallright
+{
+    background-color:gray;
+    width:10;
+    height:100;
+    position:absolute;
+    top:330;
+    right:495;
+}
+    
+.wallleft
+{
+    background-color:gray;
+    width:10;
+    height:40;
+    position:absolute;
+    top:330;
+    right:630;
+}
+
+.walltop
+{
+    background-color:pink;
+    width:130;
+    height:10;
+    position:absolute;
+    top:330;
+    right:500;
+}
+
+.wallbottom
+{
+    background-color:gray;
+    width:145;
+    height:10;
+    position:absolute;
+    top:420;
+    right:500;
+}
+
+
+.me 
+{
+    background-color:Fuchsia;
+    border-radius:50%;
+    width:20px;
+    height:20px;
+    position:absolute;
+    top:400;
+    right:565;
+    z-index:2;
+}
+
+.key 
+{
+    width:15;
+    height:15;
+    position:absolute;
+    top:340;
+    right:505;
+}
+
+
+.gate 
+{
+    background-color:red;
+    width:5;
+    height:50;
+    position:absolute;
+    top:370;
+    right:632;
+}
+
+
+.bottom 
+{
+    background-color:orange;
+    width:280;
+    height:10;
+    position:absolute;
+    top:420;
+    right:645;
+}
+
+.top 
+{
+    background-color:orange;
+    width:280;
+    height:10;
+    position:absolute;
+    top:360;
+    right:640;
+}
+
+.trap 
+{
+    width:50;
+    height:50;
+    position:absolute;
+    top:370;
+    right:705; 
+} 
+
+
+.gameOverTitle  
+{
+    position:fixed;
+    width:25%;
+    height:20%;
+    background-color:#DADFE1;
+    margin:17.5% 35%;
+    border-radius:20px;
+    border:solid 2px black;
+    font-family:Century;
+    text-align:center;
+    padding:10px;
+    font-size:25px;
+
+    
+    
+}
+
+
+#gameOver 
+{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.5);
+    z-index:3;
+    display:none;
+}
+
+.btn 
+{
+    color:White;
+    background-color:#6C7A89;
+    cursor:pointer; 
+    font-family:Corbel;
+    padding:5px;
+     border:none;
+    border-radius:3px;  
+    border-bottom:solid 0.5px black;
+    border-right:solid 0.5px black;
+    margin-top:15px;
+}
+
+.btn:hover 
+{
+    border:none;
+    margin-left:0.5px;
+    margin-top:0.5px;
+}
+
+.green 
+{
+    background-color:#87D37C;
+    position:absolute;
+    right:495;
+    top:330;
+    width:145;
+    height:95;
+}
+    
+.green1 
+{
+    background-color:#87D37C;
+    position:absolute;
+    right:635;
+    top:370;
+    width:280;
+    height:55;
+}
+
+.block 
+{
+    top:450; 
+    right:490;
+    position:absolute; 
+    z-index:1;
+    width:45; 
+    height:15;
+}
+
+.text 
+{  
+    position:absolute;
+    right:515;
+    top:370; 
+    z-index:1;
+    direction:rtl;
+    text-align:center;
+    font-size:11px;
+    font-family:David;
+} 
+
+
+.score 
+{
+    position:absolute;
+    top:240;
+    right:540;
+    background-color:gray;
+    direction:rtl;
+    display:inline-block;
+    padding:10px;
+    border:solid 3px yellow;
+
+}
+
+.coin 
+{
+     width:12;
+     height:12;
+     position:absolute;
+     right:565;
+     top:400;
+     z-index:1
+}

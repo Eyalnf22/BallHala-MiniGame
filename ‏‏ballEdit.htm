@@ -1,0 +1,1479 @@
+﻿<html>
+<head>
+    <title>ball edit</title>
+    <link href="ballStyleSheet.css" rel="stylesheet" type="text/css" />
+     <link rel="icon" type="image/png" href="icon.jpg" /> 
+</head>
+<body>
+<audio id="ring">
+    <source src="ring.mp3" type="audio/mp3">
+</audio>
+
+<audio id="ring1">
+    <source src="ring.mp3" type="audio/mp3">
+</audio>
+<audio id="gameOverMuzic">
+    <source src="gameOver.mp3" type="audio/mp3">
+</audio>
+
+<audio id="muzicCoin">
+    <source src="coins.mp3" type="audio/mp3">
+</audio>
+
+<audio id="muzicCoin1">
+    <source src="coins.mp3" type="audio/mp3">
+</audio>
+
+<audio id="chest">
+    <source src="chest.mp3" type="audio/mp3">
+</audio>
+
+<audio id="close">
+    <source src="close.mp3" type="audio/mp3"></source>
+</audio>
+
+<audio id="muzicWrong">
+    <source src="wrong.mp3" type="audio/mp3"></source>
+</audio>
+
+<audio id="muzicRight">
+    <source src="right.mp3" type="audio/mp3"></source>
+</audio>
+
+<audio id="tada">
+    <source src="tada.mp3" type="audio/mp3"></source>
+</audio>
+
+<audio id="resetLazer">
+    <source src="resetLazer.mp3" type="audio/mp3"></source>
+</audio>
+
+<audio id="greenMuzic">
+    <source src="green.mp3" type="audio/mp3"></source>
+</audio>
+
+<audio id="explos">
+    <source src="explosion.mp3" type="audio/mp3"></source>
+</audio>
+
+<audio id="winSound">
+    <source src="win.mp3" type="audio/mp3"></source>
+</audio>
+
+<audio id="heartSound">
+    <source src="heart.mp3" type="audio/mp3"></source>
+</audio>
+
+<audio id="die">
+    <source src="die.mp3" type="audio/mp3"></source>
+</audio>
+
+
+<button onclick="help()" style="position:absolute; right:250;">עזרה!</button>
+<button onclick=    "try1()" style="position:absolute; right:200;">נסה!</button>
+
+
+<div class="back"></div>
+<div class="green"></div>
+<div class="green1"></div>
+<div class="lilGreen" ></div>
+<div class="lilGreen" style="right:987;" ></div>
+<div id="redZone" style="opacity:1;"></div>
+<div style="width:700; height:34; position:absolute; right:350; top:284; background-color:lightblue; z-index:1; border-radius:10px;"></div>
+
+<div id="intro" class="text">קחו את <b>המפתח</b> על מנת <br />לפתוח את המעבר</div>
+<div id="intro1" class="text" style="right:510; top:220; display:none;">הזהרו ממלכודות!</div>
+<div id="intro2" class="text" style="right:810; top:126; display:none;">אספו את מטבעות </div>
+<div id="intro3" class="text" style="right:1024; top:426; display:none; font-size:16px;"> אספו את כל המפתחות כדי <br />להשבית את התותחים</div>
+
+<div id="eCes" class="e"><img src="e key.png" style="width:23; height:23; left:6; top:6; position:relative;"/> </div>
+<div id="eCont" class="e" style="right:1088; top:260;"><img src="e key.png" style="width:23; height:23; left:6; top:6; position:relative;"/> </div>
+
+
+
+
+    
+
+<div id="solo1" class="walltop"  style="top:96; right:331; width:875;  height:18;"></div>
+<div id="solo2" class="top"  style="top:160; right:591; width:96; height:19;"></div>
+<div id="solo3" class="top"  style="top:160; right:742; width:247; height:19;"></div>
+<div id="solo4" class="top"  style="top:160; right:1043; width:154; height:19;"></div>
+
+
+
+
+<div id="solo5" class="border" style="width:18; right:331; top:113; height:413;"></div>
+<div id="solo6" class="bor" style=" right:681; top:113;  width:6;height:60;"></div>
+<div id="solo7" class="bor" style=" right:983; top:113;  width:6;height:60;"></div>
+<div id="solo16bb" class="wallLeft" style=" right:1050; top:270;  width:13; height:110; border-radius:5px;"></div>
+
+
+<div id="solo8" class="wallleft" style="width:18; height:79; top:99; right:591;"></div>
+<div id="solo9" class="border" style="width:18; right:1188; top:113; height:413;"></div>
+<div id="solo10" class="bor" style=" right:742; top:113; width:6; height:60;"></div>
+<div id="solo11" class="bor" style=" right:1043; top:113; width:6; height:60;"></div>
+<div id="solo14" class="walltop"style="top:508; right:331; width:862; height:18;"></div>
+
+
+<div id="solo15bb" class="wallbottom"  style="top:270; height:60; width:730; right:331; border-radius:5px;"></div>
+
+<img id="me" src="me1.png" class="me" style="height:30; opacity:1;">
+
+<img id="key" src="key.png" class="key" style="top:134; right:450; width: 28; height: 28; display:block;"/>
+<img id="coin1" src="coin.gif" class="coin" style="right:703; top:152;  width:21; height:21; display:block;"/>
+<img id="coin2" src="coin.gif" class="coin" style="right:703; top:119;  width:21; height:21; display:block;"/>
+<img id="coin3" src="coin.gif" class="coin" style="right:1006; top:152;  width:21; height:21; display:block;"/>
+<img id="coin4" src="coin.gif" class="coin" style="right:1006; top:119;  width:21; height:21; display:block;"/>
+<img id="coin5" src="coin.gif" class="coin" style="right:365; top:470;  width:21; height:21; display:block;"/> 
+<img id="coin7" src="coin.gif" class="coin" style="right:1100; top:400;  width:21; height:21; display:block;"/>  
+<img id="coin6" src="coin.gif" class="coin" style="right:1100; top:460;  width:21; height:21; display:block;"/> 
+<img id="coin8" src="coin.gif" class="coin" style="right:990; top:350;  width:21; height:21; display:block;"/> 
+<img id="coin9" src="coin.gif" class="coin" style="right:1120; top:226;  width:21; height:21; display:block;"/> 
+<img id="coin10" src="coin.gif" class="coin" style="right:760; top:460;  width:21; height:21; display:block;"/> 
+<img id="coin11" src="coin.gif" class="coin" style="right:500; top:340;  width:21; height:21; display:block;"/> 
+<img id="coin12" src="coin.gif" class="coin" style="right:365; top:350;  width:21; height:21; display:block;"/> 
+
+
+
+<img id="heart1" src="heart.png" class="coin" style="right:1110; top:350;  width:21; height:21; display:block;"/>
+<img id="heart2" src="heart.png" class="coin" style="right:780; top:220;  width:21; height:21; display:block;"/>
+
+
+
+<img id="collecter1" src="coin.gif" class="coin" style="right:1159; top:223;  width:21; height:21; z-idnex:-1;"/>
+<img id="collecter2" src="coin.gif" class="coin" style="right:1159; top:223;  width:21; height:21; z-idnex:-1;"/>
+<img id="collecter3" src="coin.gif" class="coin" style="right:1159; top:223;  width:21; height:21; z-idnex:-1;"/>
+<img id="collecter4" src="coin.gif" class="coin" style="right:1159; top:223;  width:21; height:21; z-idnex:-1;"/>
+<img id="collecter5" src="coin.gif" class="coin" style="right:1159; top:223;  width:21; height:21; z-idnex:-1;"/>
+<img id="collecter6" src="coin.gif" class="coin" style="right:1159; top:223;  width:21; height:21; z-idnex:-1;"/>
+<img id="collecter7"src="coin.gif"" class="coin" style="right:1159; top:223;  width:21; height:21; z-idnex:-1;"/>
+<img id="collecter8" src="coin.gif" class="coin" style="right:1159; top:223;  width:21; height:21; z-idnex:-1;"/>
+<img id="collecter9" src="coin.gif" class="coin" style="right:1159; top:223;  width:21; height:21; z-idnex:-1;"/>
+<img id="collecter10" src="coin.gif" class="coin" style="right:1159; top:223;  width:21; height:21; z-idnex:-1;"/>
+
+
+
+<div class="score">
+<img src="coin.gif" width="25" height="25" style="margin-right:4px; margin-top:3px;"/> <b><span id="score" style="position:absolute; top:10; right:50; font-size:28px;"></span></b>
+ </div>
+
+<div id="gate" class="gate" style=" width:9; height:91; top:179; right:591;"></div>
+
+<div class="heartScore">
+<img id="life3" src="nonheart.png" width="25" height="25" style="margin-right:7px;" />
+<img id="life2" src="nonheart.png" width="25" height="25" />
+<img id="life1" src="nonheart.png"  width="25" height="25" />
+</div>
+
+<img id="traper1" src="redborder.png" class="trap" style="top:178; right:668;  width:92; height:92;">
+<img id="traper2" src="redborder.png"  class="trap" style=" top:178; right:820; width:92;  height:92;">
+<img id="traper3" src="redborder.png"  class="trap" style=" top:178; right:970; width:92;  height:92;">
+
+<img id="solo12" src="chest1.png" style="width:35; height:30; right:1151; top:221; position:absolute; z-index:1;" /> 
+<img id="solo13" src="control.png" style="width:25; height:25; position:absolute; right:1063; top:286;"/>
+<img id="lazer" src="laser22.png" style="width:127; height:20; position:absolute; right:1062; top:350; opacity:1;"/>
+
+
+<img id="canonball1" src="canonball.png" class="canonball" style=" top:335; right:460; width:24px; height:24px;"/>
+<img id="canonball2" src="canonball.png" class="canonball" style=" top:375; right:460; width:24px; height:24px;"/>
+<img id="canonball3" src="canonball.png" class="canonball" style=" top:415; right:460; width:24px; height:24px;"/>
+<img id="canonball4" src="canonball.png" class="canonball" style=" top:455; right:460; width:24px; height:24px;"/>
+
+
+<img id="canon1" src="canon.png"  style="position:absolute; top:313; right:400; width:77px; height:77px;"/>
+<img id="canon2" src="canon.png"  style="position:absolute; top:353; right:400; width:77px; height:77px;"/>
+<img id="canon3" src="canon.png" style="position:absolute; top:393; right:400; width:77px; height:77px;"/>
+<img id="canon4" src="canon.png"  style="position:absolute; top:434; right:400; width:77px; height:77px;"/>
+
+<img id="keyer" src="keyer.gif" width="30" height="30" style="position:absolute; top:400; right:740; width:35px; height:20px;"  />
+
+<img id="burn1" src="burn.gif" class="burn" style="top:300; right:340;"/>
+<img id="burn2" src="burn.gif" class="burn" style="top:340; right:340;"/>
+<img id="burn3" src="burn.gif" class="burn" style="top:385; right:340;"/>
+<img id="burn4" src="burn.gif" class="burn" style="top:425; right:340;"/>
+
+<div id="way9" class="way" style="background-color:tomato; right:340; width:130;"></div>
+
+<div class="finish" style="background-color:grey; height:4; width:45; top:450;"></div>
+<img src="finish.png" class="finish" />
+
+
+<div id="way1" class="way"></div>
+<div id="way2" class="way" style="background-color:Orange; right:800;"></div>
+<div id="way3" class="way" style="background-color:yellow; right:740;"></div>
+<div id="way4" class="way" style="background-color:green; right:680;"></div>
+<div id="way5" class="way" style="background-color:blue; right:620;"></div>
+<div id="way6" class="way" style="background-color:pink; right:560;"></div>
+<div id="way7" class="way" style="background-color:#19b5fe; right:500;"></div>
+<div id="way8" class="way" style="background-color:purple; right:440;"></div>
+
+
+
+
+
+<div id ="quiz" class="quiz">
+    <div id="quizTitle">
+
+    <div style="text-align:right; padding:10px; font-size:20px; margin-top:14px;">
+ : ענה על השאלה הבאה בתמורה ל10 מטבעות -<br />
+ </div>
+ <span class="closeX" onclick="closeQuiz()">&times</span>
+
+ <div style="font-size:35px; color:white; background-color:#34495E; text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">
+   
+ <b> 
+ ?כמה זמן ערכה מלחמת מאה השנים
+   </b>
+    </div>
+    <br />
+
+    <img id="answerPic" src="wat.png"  width="66" height="66" style=" position:absolute; top:170; right:312; " />
+
+
+    <table cellspacing="9" width="80%" align="center"  style=" margin:0 auto;  background:radial-gradient(circle, #C5EFF7 15% ,#89C4F4 20% ,#81CFE0 ,#116ebb); border-radius:15px; border:0.5px solid grey;">
+
+        <tr>
+            <td >
+              <div id="right" class="answer" onclick="answer=true">ב. 116 שנים</div>
+              
+            </td>
+
+             <td>
+                <div id="wrong1"  class="answer" onclick="answer=false">א. 98 שנים</div>
+            </td>
+        
+        
+        </tr>
+
+        <tr>
+            <td>
+                <div id="wrong2"  class="answer" onclick="answer=false" >ד. 10 שנים</div>
+            </td>
+
+            <td>
+                <div id="wrong3"  class="answer" onclick="answer=false">ג. 100 שנים</div>
+            </td>
+        
+        
+        </tr>
+
+     </table>  
+</div>
+
+ <div class="replay" id="won">
+ <b>
+ :זכית ב
+</b>
+<br />
+
+    <div style=" padding:10px;">
+         <span style="position:relative; bottom:8; font-size:45px;"> 10 </span><img src="coin.gif" width="50" height="50" />
+    </div>
+
+    <button onclick="collect()" class="submit">אסוף</button>
+</div>
+
+ <div class="replay" id="wrongAnswer">
+ <b>
+תשובה שגויה!
+</b>
+<br />
+<span style="font-size:16px;">
+לא תוכל לפתוח את תיבה שוב
+</span>
+
+<br />
+<br />
+
+    <button onclick="closeWrong()" class="submit" style=" background :linear-gradient(180deg, #CF000F,#EF4836);">סגור</button>
+</div>
+
+</div>
+
+
+<div id="gameOver" class="gameOver" style="display:none;">
+    <div class="gameOverTitle" style="font-family:Guttman hatzvi;">
+        <b>
+       !המשחק נגמר
+        </b><br /><font size="6">!אתה מת</font><br />
+        <button class="btn" onclick="rage()">rage quit</button>
+        <button onclick="again()" class="btn" style="margin-left:10px; font-family:Guttman hatzvi;">נסה שוב</button>
+    </div>
+</div>
+
+
+<div id="lazerQuiz" class="quiz">
+
+    <div id="lazerTitle">
+
+
+    <img src="hacker.gif" class="hackNumbers"/>
+    <div id="gage1" class="gage"></div> 
+    <img id="circle1" src="redCir.png" class="circles" />
+     <div id="spot1" class="spot" style="left:172; width:35;"></div>
+    <div id="mark1" class="mark"></div>
+   
+   
+
+        <div id="gage2" class="gage" style="top:150;"></div> 
+    <img id="circle2" src="redCir.png" class="circles" style="top:150;"/>
+      <div id="spot2" class="spot" style="left:172; width:35; top:152.3;"></div>
+      <div id="mark2" class="mark"style="top:150;"></div>
+
+            <div id="gage3" class="gage" style="top:200;"></div> 
+    <img id="circle3" src="redCir.png" class="circles" style="top:200;"/>
+      <div id="spot3" class="spot" style="left:172; width:35; top:202.3;"></div>
+      <div id="mark3" class="mark"style="top:200;"></div>
+
+
+              <div id="gage4" class="gage" style="top:250;"></div> 
+    <img id="circle4" src="redCir.png" class="circles" style="top:250;"/>
+      <div id="spot4" class="spot" style="left:172; width:35; top:252.3;"></div>
+      <div id="mark4" class="mark"style="top:250;"></div>
+ 
+ <div id="textLock">
+ <span class="closeX" style="top:-12; left:-7; font-size:30px;" onclick="closeLazerQuiz()">&times</span>
+<b> !פרוץ את הכספת</b>
+<br />
+<span style="font-size:13px;">
+ לחץ על הרווח כאשר הקו <b>השחור</b> עומד על החלק  <font color="#1e824c">הירוק </font> <br / /> !כדי לפתוח את המנעול
+
+ </span>
+ </div>
+
+    <div id="lockBorder" class="lockBorder">
+    <img id ="lock" src="lockclose.png" width="50" height="50" style="margin-top:10px;"/>
+   </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="reasults" class="gameOver" style="display:none;">
+    <div class="gameOverTitle" style="height:310px; width:37%;">
+        <b><font face="guttman hatzvi">
+        !ניצחת</font>
+        </b><br /><font  face="guttman hatzvi" style=" font-size:20px; margin:140;">!סיימת את המשחק בהצלחה</font>
+        <div class="show" id="show" style="display:block; width:265; "/></div>
+
+
+        <center>
+        <div id="final" style="display:none; background-color:Black;">
+        
+        <b><span id="finalCoins" style="position:absolute; right:180; top:145; width:35px; height:35px; font-size:50px;">0</span></b>
+         <img src="coin.gif"  style="position:absolute; right:225; top:155; width:45px; height:45px;"/>
+         <div id="finalLife" style="font-size:25px; padding-top:25px;">
+         <img id="Flife1" src="nonheart.png" width="25" height="25" />
+         <img id="Flife2" src="nonheart.png" width="25" height="25" />
+         <img id="Flife3" src="nonheart.png"  width="25" height="25" />
+         </div>
+         
+         </div>
+        </center>
+       
+       <br />
+       <button id="finish" class="finishBtn" style="display:none; " onclick=" location.reload()">שחק שוב</button>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<script>
+    
+   //משתנים
+   var me = document.getElementById("me");
+   var eyal = 506;
+   var ido = 230
+   var keyCon = true;
+   var noga = 0;
+   var ezra = 0;
+   var tal = 0;
+   var rightCon = true;
+   var topCon = true;
+   var leftCon = true;
+   var bottomCon = true;
+   var gateCon = true;
+   var leftPass = false;
+   var rightPass = false;
+   var topPass = false;
+   var bottomPass = false;
+   var key = document.getElementById("key");
+   var ring = document.getElementById("ring");
+   var redGatePos = 91;
+   var gameOver = document.getElementById("gameOver");
+   var scoreCoins = 0;
+   var meHeight = parseInt(me.style.height);
+   var redCon1 =false;
+   var redCon2 =false
+   var redCon3 = false;
+   var posCon;
+   var stop = true;
+   var soloLeftCon = true;
+   var soloBottomCon = true;
+   var soloTopCon = true;
+   var soloRightCon = true;
+   var active = false;
+   var quiz = document.getElementById("quiz");
+   var e = document.getElementById("e");
+   var eCesOpacity = 0;   
+   var eCesTop;
+   var eCesRight;
+   var eContTop;
+   var eContRight;
+   var eContOpacity = 0;
+   var answer;
+   var once = true;
+   var openChest = true;
+   var finishLineCol =335;
+   var lastCol = document.getElementById("collecter10");
+   var firstCol = document.getElementById("collecter1");
+   var more = true;
+   var opencontrol = true;
+   var control = false;
+   var Xmark1 = 80;
+   var varMark1 = 0.65; 
+   var Xmark2 = 80;
+   var varMark2 = 0.9;
+   var Xmark3 = 80;
+   var varMark3 = 1;
+   var Xmark4 = 80;
+   var varMark4 = 1.2;
+   var spaceClick = false;
+   var greenMuzic = document.getElementById("greenMuzic");
+   var gage1 = true;
+   var gage2 = true;
+   var gage3 = true;
+   var gage4 = true;
+   var greenMuzic = document.getElementById("greenMuzic");
+   var lazerOp = 1;
+   var gages = true;
+   var lazerCon = true;
+   var canonGo = 400;
+   var telpor1 = true;
+   var telpor2 = true;
+   var final = true;
+   var canonOp = 1;
+   var life = 1;
+   var hurt = true;
+   var life1 = document.getElementById("life1");
+   var life2 = document.getElementById("life2");
+   var life3 = document.getElementById("life3");
+   var winnerMuzic = true;
+   var keep = true;
+   var zoneOpacity = 1;
+   var blinkDelay = 240;
+   var moreBlink = 15;
+   var widthShow = parseInt(document.getElementById("show").style.width);
+   var finalCoins = document.getElementById("finalCoins").innerHTML;
+   var hr = 1;
+   var muzic = true;
+   /////////////////////////////////////////////////// 
+   //מזיז  את המדדים השחורים
+  mark1 = setInterval(mark1 ,1);
+  function mark1() {
+      var mark1 = document.getElementById("mark1");
+
+      if (Xmark1 + mark1.style.width >= 300 || Xmark1 <= 70) {
+          varMark1 = -varMark1;
+      }
+       
+      if (gage1) {
+          mark1.style.left = Xmark1;
+           Xmark1 += varMark1;
+      }
+  }
+
+      mark2 = setInterval(mark2, 1);
+      function mark2() {
+          var mark2 = document.getElementById("mark2");
+          
+          if (Xmark2 + mark2.style.width >= 300 || Xmark2 <= 70) {
+              varMark2 = -varMark2;
+          }
+
+          if (gage2) {
+              mark2.style.left = Xmark2;
+              Xmark2 += varMark2;
+          }
+      }
+
+     
+      mark2 = setInterval(mark4, 1);
+      function mark4() {
+          var mark4 = document.getElementById("mark4");
+
+          if (Xmark4 + mark4.style.width >= 300 || Xmark4 <= 70) {
+              varMark4 = -varMark4;
+          }
+
+          if (gage4) {
+              mark4.style.left = Xmark4;
+              Xmark4 += varMark4;
+          }
+      }
+
+    mark3 = setInterval(mark3, 1);
+    function mark3() {
+        var mark3 = document.getElementById("mark3");
+
+        if (Xmark3 + mark3.style.width >= 300 || Xmark3 <= 70) {
+            varMark3 = -varMark3;
+        }
+
+        if (gage3) {
+            mark3.style.left = Xmark3;
+             Xmark3 += varMark3
+        } 
+    }
+
+
+
+    document.addEventListener("keydown", keyDownHandler);
+    document.addEventListener("keyup", keyUpHandler);
+
+    function keyUpHandler(e) {
+
+        if (e.keyCode == 39) {
+            rightPass = false; 
+
+        }
+        if (e.keyCode == 37) {
+            leftPass = false;
+           
+        }
+
+        if (e.keyCode == 38) {
+            topPass = false;
+        }
+        if (e.keyCode == 40) {
+            bottomPass = false;
+        }
+    }
+
+    function keyDownHandler(e) {
+        if (e.keyCode == 39) {
+            rightPass = true;
+        }
+        if (e.keyCode == 37) {
+            leftPass = true;
+            
+        }
+        if (e.keyCode == 38) {
+            topPass = true;
+        }
+        if (e.keyCode == 40) {
+            bottomPass = true;
+        }
+
+        if (e.keyCode == 69 && active && openChest) {
+            quiz.style.display = "block";
+            document.getElementById("chest").play();
+            stop = false;
+
+        }
+
+        if (e.keyCode == 69 && control && opencontrol) {
+            spaceClick = true;
+            lazerQuiz.style.display = "block";
+            document.getElementById("chest").play();
+            stop = false;
+            spaceClick = true;
+        }
+
+
+        if (e.keyCode == 27 && quiz.style.display == "block") {
+            quiz.style.display = "none";
+            document.getElementById("close").play();
+            stop = true;
+
+        }
+
+
+        if (e.keyCode == 27 && lazerQuiz.style.display == "block") {
+            closeLazerQuiz();
+
+        }
+
+
+
+        //מה קורה אם אני לוחץ על מקלדת
+        if (spaceClick == true && e.keyCode == 32) {
+
+            var spot = document.getElementById("spot1");
+            var spotLeft = parseInt(spot.style.left);
+            var spotWidth = parseInt(spot.style.width);
+            if (Xmark1 + 2 >= spotLeft && Xmark1 + 2 <= spotLeft + spotWidth && gage1 == true) {
+                greenMuzic.play();
+                document.getElementById("circle1").src = "greenCir.png";
+                setTimeout(next1, 1);
+                function next1() {
+                    gage1 = false;
+
+                }
+
+            }
+
+
+            var spot = document.getElementById("spot2");
+            var spotLeft = parseInt(spot.style.left);
+            var spotWidth = parseInt(spot.style.width);
+            if (Xmark2 + 2 >= spotLeft && Xmark2 + 2 <= spotLeft + spotWidth && gage1 == false) {
+                document.getElementById("circle2").src = "greenCir.png";
+                greenMuzic.play();
+                setTimeout(next2, 1);
+                function next2() {
+                    gage2 = false;
+
+                }
+
+            }
+
+
+            var spot = document.getElementById("spot3");
+            var spotLeft = parseInt(spot.style.left);
+            var spotWidth = parseInt(spot.style.width);
+            if (Xmark3 + 2 >= spotLeft && Xmark3 + 2 <= spotLeft + spotWidth && gage2 == false) {
+                document.getElementById("circle3").src = "greenCir.png";
+                greenMuzic.play();
+                setTimeout(next3, 1);
+                function next3() {
+                    gage3 = false;
+
+                }
+
+            }
+
+
+            var spot = document.getElementById("spot4");
+            var spotLeft = parseInt(spot.style.left);
+            var spotWidth = parseInt(spot.style.width);
+            if (Xmark4 + 2 >= spotLeft && Xmark4 + 2 <= spotLeft + spotWidth && gage3 == false) {
+                document.getElementById("circle4").src = "greenCir.png";
+                greenMuzic.play();
+                gage4 = false;
+
+            }
+
+
+            if (Xmark1 + 3 <= spotLeft && gage1 == true || Xmark1 + 3 >= spotLeft + spotWidth && gage1 == true || Xmark2 + 3 <= spotLeft && gage1 == false || Xmark2 + 3 >= spotLeft + spotWidth && gage1 == false || Xmark3 + 3 <= spotLeft && gage2 == false || Xmark3 + 3 >= spotLeft + spotWidth && gage2 == false || Xmark4 + 2 <= spotLeft && gage3 == false || Xmark4 + 2 >= spotLeft + spotWidth && gage3 == false) {
+                setTimeout(reset, 10);
+                function reset() {
+                    gage1 = true;
+                    gage2 = true;
+                    gage3 = true;
+                    gage4 = true;
+                    document.getElementById("circle1").src = "redCir.png";
+                    document.getElementById("circle2").src = "redCir.png";
+                    document.getElementById("circle3").src = "redCir.png";
+                    document.getElementById("circle4").src = "redCir.png";
+                    Xmark1 = 80;
+                    Xmark2 = 80;
+                    Xmark3 = 80;
+                    Xmark4 = 80;
+                    document.getElementById("resetLazer").play();
+                }
+            }
+        }
+
+
+        //אם פתחת את כל המנעולים
+        lockCheck = setInterval(lockCheck, 1);
+        function lockCheck() {
+            if (gage1 == false && gage2 == false && gage3 == false && gage4 == false && gages) {
+                document.getElementById("lock").src = "lockopen.png";
+                document.getElementById("lockBorder").style.backgroundColor = "#4daf7c";
+                setTimeout(closeLazerQuiz, 2000);
+                setTimeout(nowLazer, 2000);
+                clearInterval(lockCheck);
+                gages = false;
+
+
+            }
+        }
+        //העלמת שער הלייזר
+        function nowLazer() {
+            openLazer = setInterval(openLazer, 1);
+        }
+        
+        function openLazer() {
+            if (lazerOp <= 0) {
+                clearInterval(openLazer);
+                clearInterval(lazerBorder);
+                lazerCon = true;
+                opencontrol = false;
+                document.getElementById("intro3").style.display = "block";
+
+
+            }
+
+            else {
+                lazerOp -= 0.002;
+                lazer.style.opacity = lazerOp;
+            } 
+        }
+    }
+
+    lazerBorder = setInterval(lazerBorder, 1);
+    function lazerBorder() {
+        lazerCon = true;
+        var lazer = document.getElementById("lazer");
+        var lazerHeight = parseInt(lazer.style.height)
+        var lazerTop = parseInt(lazer.style.top)
+        var lazerWidth = parseInt(lazer.style.width)
+        var lazerRight = parseInt(lazer.style.right)
+        if (ido + meHeight + 0.70 > lazerTop && ido < lazerTop + lazerHeight && eyal < lazerRight + lazerWidth && eyal + meHeight > lazerRight) {
+            lazerCon = false;
+        }
+    }
+
+
+
+
+
+
+    //סגירת החידון
+    function closeQuiz() {
+            quiz.style.display = "none";
+            document.getElementById("close").play();
+            spaceClick = false
+            stop = true;
+
+        }
+        //סגירת הפריצה
+        function closeLazerQuiz() {
+            lazerQuiz.style.display = "none";
+            document.getElementById("close").play();
+            spaceClick = false;
+            stop = true;
+
+        }
+
+
+
+
+
+    setInterval(moves, 1);
+    function moves() {
+        if (rightPass && soloRightCon && stop) {
+            eyal -= 0.6;
+            me.style.right = eyal ;
+        }
+        if (leftPass &&  gateCon && soloLeftCon && stop) {
+            eyal += 0.6;
+            me.style.right = eyal;
+           
+
+        }
+
+        if (topPass && soloTopCon && stop) {
+            ido -= 0.6;
+            me.style.top = ido;
+            
+        }
+        if (bottomPass && soloBottomCon && lazerCon && stop) {
+            ido += 0.6;
+            me.style.top = ido ;
+
+        }
+    }
+
+
+    //גבולות לאובייקטים בודדים כמו סלע אומתפח או ביתה או כספת
+    setInterval(solo, 1);
+
+    function solo() {
+       
+        soloRightCon = true;
+        soloLeftCon = true;
+        soloTopCon = true;
+        soloBottomCon = true;
+
+        for (Ls = 1; Ls < 100; Ls++) {
+            var LsoloIds = "solo" + Ls;
+            var solo = document.getElementById(LsoloIds);
+            soloRight = parseInt(solo.style.right);
+            soloTop = parseInt(solo.style.top);
+            soloHeight = parseInt(solo.style.height);
+            soloWidth = parseInt(solo.style.width);
+            if (ido + meHeight > soloTop && ido < soloTop + soloHeight && eyal < soloRight + soloWidth && eyal + meHeight + 0.70 > soloRight) {
+                soloLeftCon = false;
+            }
+
+            if (ido + meHeight > soloTop && ido - 0.70 < soloTop + soloHeight && eyal < soloRight + soloWidth && eyal + meHeight > soloRight) {
+                soloTopCon = false;
+
+            }
+
+            if (ido + meHeight > soloTop && ido < soloTop + soloHeight && eyal - 0.70 < soloRight + soloWidth && eyal + meHeight > soloRight) {
+                soloRightCon = false;
+            }
+
+
+            if (ido + meHeight + 0.70 > soloTop && ido < soloTop + soloHeight && eyal < soloRight + soloWidth && eyal + meHeight > soloRight) {
+                soloBottomCon = false;
+            }
+
+        }
+    }
+        setInterval(chest, 1);
+        function chest() {
+            //מעדכן את הנתונים של E
+            eCes.style.top = eCesTop;
+            eCes.style.right = eCesRight;
+            eCes.style.opacity = eCesOpacity;
+
+            //אם אתה סביב התיבה אז active ture
+            active = false;
+            if (eyal >= 1111 && ido >= 183 && ido <= 252) {
+                active = true;
+            }
+            //מעלה את E 
+            if (active && openChest) {
+                eCesOpacity += 0.01;
+
+                if (eCesTop <= 184) {
+                    eCesTop = 184;
+                    eCesRight = 1150
+                }
+                else {
+                    eCesTop -= 0.1;
+                }
+            }
+            else {
+                eCesOpacity = 0;
+                eCesTop = 193;
+                eCesRight = 1150
+            }
+        }
+
+
+    setInterval(Econtrol, 1);
+    function Econtrol() {
+        eCont.style.top = eContTop;
+        eCont.style.right = eContRight;
+        eCont.style.opacity = eContOpacity;
+        control = false;
+        if (eyal <= 1089 && eyal >= 1024 + meHeight && ido > 248) {
+            control = true;
+
+        }
+        //מעלה את E 
+        if (control && opencontrol) {
+            eContOpacity += 0.01;
+           
+
+            if (eContTop <= 250) {
+                eContTop = 250;
+                eContRight = 1058
+            }
+            else {
+                eContTop -= 0.1;
+            }
+        }
+        else {
+            eContOpacity = 0;
+            eContTop = 260;
+            eContRight = 1058
+
+        } 
+    }
+
+        //מפתח לפתיחת השער
+        setInterval(openGate, 1);
+        function openGate() {
+             keyRight = parseInt(key.style.right);
+             keyTop = parseInt(key.style.top);
+             keyHeight = parseInt(key.style.height);
+             keyWidth = parseInt(key.style.width);
+
+             if (key.style.display == "block" && eyal + meHeight > keyRight && eyal < keyRight + keyWidth && ido + meHeight > keyTop && ido < keyTop + keyHeight) {
+                key.style.display = "none";
+                ring.play();
+                var open = setInterval(slowOpen, 10);
+                document.getElementById("intro").style.display = "none";
+                document.getElementById("intro1").style.display = "block";
+                document.getElementById("intro2").style.display = "block";
+
+                clearInterval(gate);
+
+            }
+        }
+        
+
+
+    //אינטרבל נפרד שמונע כניסה דרך השער והוא נעצר בהשגת המפתח
+    gate = setInterval(gateBorder, 1);
+    function gateBorder() {
+    gateCon = true;  
+            var gate = document.getElementById("gate");
+            var gateHeight = parseInt(gate.style.height)
+            var gateTop = parseInt(gate.style.top)
+            var gateWidth = parseInt(gate.style.width)
+            var gateRight = parseInt(gate.style.right)
+            if (ido +20> gateTop && ido < gateTop + gateHeight && eyal > gateRight - meHeight - .70 && eyal < gateRight + gateWidth) {
+                gateCon = false;
+            
+        }
+    }
+
+     
+
+    //פותח את השער האדום
+            function slowOpen() {
+                if (redGatePos == 0) {
+                    clearInterval(open);
+                }
+                else {
+                    redGatePos--;
+                    document.getElementById("gate").style.height = redGatePos + "px";
+                }
+            }
+
+
+            //מלכודות מוות
+
+    setInterval(trapDead, 1);
+    function trapDead() {
+        for (t = 1; t < 4; t++) {
+            trapsIds = "traper" + t;
+            traps = document.getElementById(trapsIds);
+
+            trapsRight = parseInt(traps.style.right);
+            trapsWidth = parseInt(traps.style.width);
+            trapsHeight = parseInt(traps.style.height);
+            trapsTop = parseInt(traps.style.top)
+
+            if (traps.src.match("redblock.png") && ido + meHeight > trapsTop && ido < trapsTop + trapsHeight && eyal < trapsRight + trapsWidth && eyal + meHeight > trapsRight && hurt) {
+            hurt = false;
+            hit();
+            } 
+        } 
+    }
+
+                       //שינוי תמונה של מלכודות מוות
+
+    setInterval(traps, 1645);
+    function traps() {
+        for (r = 1; r < 4; r++) {
+            var trapsChangeIds = "traper" + r;
+            var trapsChange = document.getElementById(trapsChangeIds);
+
+            if (trapsChange.src.match("redblock.png")) {
+                trapsChange.src = "redborder.png";
+            }
+
+            else {
+                trapsChange.src = "redblock.png";
+            } 
+        } 
+    }
+
+
+
+//כסף עולה ומתקבל
+    setInterval(money, 1);
+    function money() {
+        for (i = 1; i < 100; i++) {
+            var coinIds = "coin" + i;
+            var coin = document.getElementById(coinIds);
+
+            coinRight = parseInt(coin.style.right);
+            coinWidth = parseInt(coin.style.width);
+            coinHeight = parseInt(coin.style.height);
+            coinTop = parseInt(coin.style.top)
+
+            if (coin.style.display == "block" && ido + meHeight > coinTop && ido < coinTop + coinHeight && eyal < coinRight + coinWidth && eyal + meHeight > coinRight) {
+                document.getElementById("muzicCoin").play();
+                coin.style.display = "none";
+                scoreCoins++;
+                if (i % 2 == 0) {
+                    document.getElementById("muzicCoin1").play();
+                } 
+            } 
+        } 
+    }
+  
+
+
+    //מעדכן את כמות המטבעות ואת  הגובה והשקיפות של E
+    setInterval(update, 1);
+    function update() {
+        document.getElementById("score").innerHTML = scoreCoins; 
+    }
+       
+
+ 
+
+
+    //אחרי שאתה מת לחץ על  rage ותופיע הודעה
+    function rage() {
+        alert("toxicyano! ;)")
+    }
+
+    //restart level
+    function again() {
+        location.reload();
+
+    }
+    // עזרה לדיווח X Y או במקרה שלי EYAL IDO
+    function help() {
+        alert(" eyal == " + eyal + " && ido == " + ido + " ||")
+
+    }
+
+   
+    
+
+    //התשובות הנכונות והשגויות
+    setInterval(answers, 1);
+    function answers() {
+
+        if (answer || answer == false) {
+            document.getElementById("right").style.backgroundColor = "#00E640";
+            document.getElementById("right").style.borderColor = "green";
+
+            for (b = 1; b < 4; b++) {
+                var wrongIds = "wrong" + b;
+                var wrongs = document.getElementById(wrongIds);
+                wrongs.style.backgroundColor = "#E74C3C";
+                wrongs.style.borderColor = "#96281B";
+            }
+        }
+
+        if (answer && once) {
+            answer = undefined;
+            document.getElementById("answerPic").src = "yes.png";
+            document.getElementById("muzicRight").play();
+            setTimeout(won, 2000);
+            once = false;
+        }
+
+        if (answer == false && once) {
+            answer = undefined;
+            document.getElementById("answerPic").src = "no.png";
+            document.getElementById("muzicWrong").play();
+            setTimeout(wrong, 2000);
+            once = false;
+        } 
+    }
+       
+
+
+       //אם ענית נכון אתה מקבל כסף 
+    function won() {
+        document.getElementById("tada").play();
+        document.getElementById("quizTitle").style.display = "none";
+        document.getElementById("won").style.display = "block";
+       
+    }
+
+
+    //אם טעית זה יעלם
+    function wrong() {
+        document.getElementById("chest").play();
+        document.getElementById("quizTitle").style.display = "none";
+        document.getElementById("wrongAnswer").style.display = "block";
+    }
+
+
+    //סוגר את ההודעה של הטעות
+    function closeWrong() {
+        document.getElementById("close").play();
+        quiz.style.display = "none";
+        openChest = false;
+        stop = true;
+
+    }
+        
+
+    
+
+    //אסןף כסף
+    function collect() {
+        document.getElementById("won").style.display = "none";
+        document.getElementById("quiz").style.display = "none";
+        document.getElementById("solo12").src = "chest2.png";
+        document.getElementById("muzicCoin").play();
+        openChest = false;
+        stop = true;
+        frame=  setInterval(frame, 300);
+        gogo = setInterval(gogo, 300);
+
+    }
+
+
+     //הפונקציה רצה ברקע כל הזמן . רק באישור של go היא ממשיכה לאובייקט הבא
+    var go = 0
+    function gogo() {
+        go++;
+      
+    }
+
+
+    //מריץ חלק את הכסף
+ function frame() {
+        goCoins = setInterval(goCoins, 1);
+
+    }
+
+
+    function goCoins() {
+        for (time = 1; time < go; time++) {
+
+            var collectIds = "collecter" + time;
+            var collect = document.getElementById(collectIds);
+            topCollect = parseInt(collect.style.top);
+            rightCollect = parseInt(collect.style.right) - 4.5;
+
+            if (topCollect <= finishLineCol  && rightCollect <= 330) {
+                collect.style.display = "none";
+            }
+            else {
+                topCollect -= 0.025;
+                collect.style.top = topCollect
+                rightCollect -= 0.168;
+                collect.style.right = rightCollect
+            }
+
+            //אם המבטע באחרון מגיע זה מבטל את האינטרבלים 
+            if (parseInt(lastCol.style.right)  <= finishLineCol) {
+                clearInterval(gogo);
+                clearInterval(frame);
+                clearInterval(goCoins);
+                setTimeout(finishCoinsUp,100);
+                lastCol.style.display = "none"; 
+                go = 0;
+            }
+            //כשהמטבע הראשון מגיע תתחיל ספירת המטבעות
+            if (parseInt(firstCol.style.right) <= finishLineCol && more) {
+                moreCoins = setInterval(moreCoins, 270);
+                more = false;
+            } 
+        } 
+    }
+    
+
+    function moreCoins() {
+        scoreCoins++;  
+    }
+
+    function finishCoinsUp() {
+        clearInterval(moreCoins);
+    }
+
+
+
+
+
+    numberCanons = Math.floor((Math.random() * 4) + 1);
+   canonTrap = setInterval(canonTrap, 1);
+
+    function canonTrap() {
+        canonGo--;
+
+        for (canon = 1; canon < 100; canon++) {
+            canonIds = "canonball" + canon;
+            canons = document.getElementById(canonIds);
+            canons.style.right = canonGo;
+            canonGo += 0.44;
+            canons.style.display = "block";
+            document.getElementById("canonball" + numberCanons).style.display = "none";
+            document.getElementById("canonball" + numberCanons).style.right = "0px";
+
+
+            if (canonGo >= 1000) {
+                canonGo = 460;
+                numberCanons = Math.floor((Math.random() * 4) + 1);
+            }
+
+
+            ballsRight = parseInt(canons.style.right);
+            ballsWidth = parseInt(canons.style.width);
+            ballsHeight = parseInt(canons.style.height);
+            ballsTop = parseInt(canons.style.top)
+            if (ido + meHeight > ballsTop && ido < ballsTop + ballsHeight && eyal < ballsRight + ballsWidth && eyal + meHeight > ballsRight && hurt) {
+                hurt = false;
+                hit();
+            } 
+        }
+    }
+    bombers =setInterval(bombers, 1)
+    function bombers() {
+        if (ido + meHeight > 330 && ido < 330 + 175 && eyal < 350 + 120 && eyal + 140 > 350 && gameOver.style.display == "none") {
+            gameOverCall();
+        }
+    }
+
+
+
+
+        setInterval(keyers, 1);
+        function keyers() {
+
+            keyers = document.getElementById("keyer");
+            keyersRight = parseInt(keyers.style.right);
+            keyersWidth = parseInt(keyers.style.width);
+            keyersHeight = parseInt(keyers.style.height);
+            keyersTop = parseInt(keyers.style.top)
+
+            if (ido + meHeight > keyersTop && ido < keyersTop + keyersHeight && eyal < keyersRight + keyersWidth && eyal + meHeight > keyersRight && telpor1 == true) {
+                ring.play()
+                keyers.style.top = 470;
+                keyers.style.right = 920;
+                setTimeout(haba1, 1);
+                function haba1() {
+                    telpor1 = false;
+                }
+            }
+
+            if (ido + meHeight > keyersTop && ido < keyersTop + keyersHeight && eyal < keyersRight + keyersWidth && eyal + meHeight > keyersRight && telpor1 == false && telpor2 == true) {
+                document.getElementById("ring1").play()
+                keyers.style.top = 330;
+                keyers.style.right = 660;
+                setTimeout(haba2, 1);
+                function haba2() {
+                    telpor2 = false;
+                }
+            }
+
+            if (ido + meHeight > keyersTop && ido < keyersTop + keyersHeight && eyal < keyersRight + keyersWidth && eyal + meHeight > keyersRight && telpor2 == false && final == true) {
+            
+                document.getElementById("explos").play();
+                final = false;
+                keyer.style.display = "none";
+                clearInterval(canonTrap);
+                setTimeout(dis, 1500);
+                for (burn = 1; burn < 5; burn++) {
+                    burns = document.getElementById("burn" + burn);
+                    ballBurn = document.getElementById("canonball" + burn);
+                    ballBurn.src = "explosion.png";
+                    burns.style.display = "block";
+                    ballBurn.style.width = "50";
+                    ballBurn.style.height = "57";
+
+                }
+            }
+        }
+        
+        function dis() {
+            setInterval(disBalls, 1);
+            setInterval(ways, 150);
+            setInterval(winner, 1);          
+            redZone = setInterval(redZoneDis, 1);
+
+            function disBalls() {
+                for (dis = 1; dis < 5; dis++) {
+                    dises = document.getElementById("canonball" + dis);
+                    dises.style.display = "none";
+
+                    canonOp -= 0.005;
+                    disCanon = document.getElementById("canon" + dis);
+                    disCanon.style.opacity = canonOp;
+                    disBurn = document.getElementById("burn" + dis);
+                    disBurn.style.opacity = canonOp;
+                }
+            }
+        }
+
+
+
+        //השביל הצבעוני נפתח
+        wayz = 1;
+        function ways() {
+            document.getElementById("way" + wayz).style.display = "block";
+            wayz++;
+        }
+        //האזור האדום של התותחים יורד
+
+        function redZoneDis() {  
+            if (zoneOpacity <= 0) {
+                clearInterval(redZone);
+                clearInterval(bombers);
+            }
+            else {
+                redZone = document.getElementById("redZone");
+                zoneOpacity -= 0.007;
+                redZone.style.opacity = zoneOpacity;
+            }
+
+
+        }
+        //כשאתה על הדגל
+        function winner() {
+            if (ido + meHeight > 390 && ido < 390 + 60 && eyal < 355 + 40 && eyal + meHeight > 355 && winnerMuzic) {
+                document.getElementById("winSound").play();
+                winnerMuzic = false;
+                setTimeout(reasults, 3000);
+               
+            }
+        }
+
+
+
+        //פקודת משחק נגמר
+        function gameOverCall() {
+            gameOver.style.display = "block";
+            if (muzic) {
+                document.getElementById("gameOverMuzic").play();
+            }
+            stop = false;
+            muzic = false;
+        }
+
+        //פיקוד על ללבות
+        setInterval(hearts, 1);
+        function hearts() {
+            switch (life) {
+                case 0:
+                    life1.src = "nonheart.png";
+                    gameOverCall();
+                    break;
+                case 1:
+                    life1.src = "heart.png";
+                    life2.src = "nonheart.png";
+                    break;
+                case 2:
+                    life2.src = "heart.png";
+                    life3.src = "nonheart.png";
+                    break;
+                case 3:
+                    life3.src = "heart.png";
+            }
+
+            if (life < 0) {  
+                gameOverCall();
+            }
+
+            //לולאה שעוזרת למספר רב של ללבות אבל במקרה שלי יש רק לב אחד אז אני משאיר את זה ככה בינתיים 
+            for (h = 1; h < 100; h++) {     
+                var heart = document.getElementById("heart" + h);
+                heartRight = parseInt(heart.style.right);
+                heartWidth = parseInt(heart.style.width);
+                heartHeight = parseInt(heart.style.height);
+                heartTop = parseInt(heart.style.top)
+
+                if (heart.style.display == "block" && ido + meHeight > heartTop && ido < heartTop + heartHeight && eyal < heartRight + heartWidth && eyal + meHeight > heartRight) {
+                    heart.style.display = "none";
+                    life++;                    
+                    document.getElementById("heartSound").play();
+                } 
+            } 
+        }
+
+        //כאשתה מקבל מכה
+        function hit() {
+            document.getElementById("die").play();
+            life--;
+            keep = true;
+            setTimeout(blink, 1);
+
+        }
+
+        //עמעום וחסינות אחרי קבלת המכה
+        function blink() {
+
+            if (me.style.opacity == 0) {
+                me.style.opacity = 1;
+            }
+            else {
+                me.style.opacity = 0;
+
+            }
+            blinkDelay -= 12 + moreBlink;
+            if (blinkDelay <= 0) {
+                keep = false;
+                me.style.opacity = 1;
+                hurt = true;
+                blinkDelay = 240;
+            }
+
+            if (blinkDelay <= 160) {
+                moreBlink = 0;
+            }
+
+            if (keep) {
+                setTimeout(blink, blinkDelay);
+            } 
+        }
+
+        //לוח סיום קופץ
+        function reasults() {
+            document.getElementById("reasults").style.display = "block";
+            stop = false;
+            setTimeout(timeCoins, 1000);
+        }
+
+        function timeCoins() {
+
+            wordsReasults = setInterval(wordsReasults, 1);
+            function wordsReasults() {
+
+                if (widthShow <= -400) {
+                    document.getElementById("show").style.display = "none";
+                    document.getElementById("final").style.display = "block";
+                    clearInterval(wordsReasults);
+                    coinsReasults = setInterval(coinsReasults, 100);
+                }
+                else {
+                    document.getElementById("show").style.width = widthShow;
+                    widthShow--;
+                }
+            }
+
+            function coinsReasults() {
+                if (finalCoins == scoreCoins) {
+                    clearInterval(coinsReasults);
+                    setTimeout(finalHeartsTime, 500);
+                    document.getElementById("muzicCoin").play();
+                }
+                else {
+                    finalCoins++;
+                    document.getElementById("finalCoins").innerHTML = finalCoins;
+                }
+            }
+
+            function finalHeartsTime() {
+              finalHearts = setInterval(finalHearts, 1000);
+
+                function finalHearts() {
+
+                    if (hr > life) {
+                        clearInterval(finalHearts);
+                        document.getElementById("finish").style.display = "block";
+                        document.getElementById("heartSound").play();
+                    }
+                    else {
+                        document.getElementById("Flife" + hr).src = "heart.png";
+                        hr++;
+                    } 
+                } 
+            } 
+        }
+
+        function try1() {
+   reasults();
+            alert(life)
+            alert(hr);
+    }
+
+    
+ 
+   
+</script>
+
+</body>
+</html>

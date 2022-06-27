@@ -1,0 +1,398 @@
+﻿<html>
+<head>
+    <title>ball game</title>
+    
+    <link href="oldball.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<audio id="ring">
+    <source src="ring.mp3" type="audio/mp3">
+</audio>
+
+<audio id="gameOverMuzic">
+    <source src="gameOver.mp3" type="audio/mp3">
+</audio>
+
+<audio id="muzicCoin">
+    <source src="coins.mp3" type="audio/mp3">
+</audio>
+
+<audio id="muzicCoin1">
+    <source src="coins.mp3" type="audio/mp3">
+</audio>
+<div id="intro" class="text">קחו את <b>המפתח</b> על מנת <br />לפתוח את המעבר</div>
+<div id="intro1" class="text" style="right:600; top:390; display:none;">הזהרו ממלכודות!</div>
+
+<div class="green"></div>
+<div class="green1"></div>
+<img src="block.jpg" class="block"/>    
+<div class="wallright"></div>
+<div class="wallleft"></div>
+<div class="walltop"></div>
+<div class="wallbottom"></div>
+<div class="me" id="me"></div>
+<img id="key" src="key.png" class="key" style=" top:340; right:505"/>
+<img id="coin1" src="coin.gif" class="coin" style="right:610; top:400; display:block;"/>
+<img id="coin2" src="coin.gif" class="coin" style="right:595; top:400; display:block;"/>
+<img id="coin3" src="coin.gif" class="coin" style="right:580; top:400; display:block;"/>
+
+<div  class="score"><img src="coin.gif" width="20" height="20" /> <span id="score"></span> </div>
+
+
+<div id="gate" class="gate"></div>
+<div class="bottom"></div>
+<div class="top"></div>
+<img src="redblock.png" id="traper" class="trap">
+<img src="redblock.png" id="traper1" class="trap" style=" top:370; right:800;">
+<img src="redblock.png" id="traper2" class="trap" style=" top:370; right:870;">
+
+<div id="gameOver">
+    <div class="gameOverTitle">
+        <b>
+        GAME OVER!
+        </b><br /><font size="3">you are dead!</font><br />
+        <button class="btn" onclick="rage()">rage quit</button>
+        <button onclick="again()" class="btn" style="margin-left:10px;">try again</button>
+    </div>
+</div>
+
+<button onclick="help()" style="margin:200px;">עזרה!</button>
+<button onclick="nani()" style="margin:200px;">נסה!</button>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+
+    //משתנים
+    var me = document.getElementById("me");
+    var eyal = 565;
+    var ido = 400;
+    var itay = true;
+    var noga = 0;
+    var ezra = 0;
+    var tal = 0;
+    var leftPressed = false;
+    var rightPressed = false;
+    var topPressed = false;
+    var bottomPressed = false;
+    var key = document.getElementById("key");
+    var ring = document.getElementById("ring");
+    var redGatePos = 50;
+    var leftpass = true;
+    var rightpass = true;
+    var bottompass = true;
+    var toppass = true;
+    var gameOver = document.getElementById("gameOver");
+    var scoreCoins = 0;
+
+    document.addEventListener("keydown", keyDownHandler);
+    document.addEventListener("keyup", keyUpHandler);
+
+    function keyDownHandler(e) {
+        if (e.keyCode == 68) {
+            rightPressed = true;
+        }
+        if (e.keyCode == 65) {
+            leftPressed = true;
+        }
+        if (e.keyCode == 87) {
+            topPressed = true;
+        }
+        if (e.keyCode == 83) {
+            bottomPressed = true;
+        }
+    }
+    function keyUpHandler(e) {
+        if (e.keyCode == 68) {
+            rightPressed = false;
+        }
+        if (e.keyCode == 65) {
+            leftPressed = false;
+        }
+
+        if (e.keyCode == 87) {
+            topPressed = false;
+        }
+        if (e.keyCode == 83) {
+            bottomPressed = false;
+        }
+    }
+
+    setInterval(waw, 1);
+    function waw() {
+        if (rightPressed) {
+            eyal -= 0.5;
+            me.style.right = eyal + "px";
+        }
+        if (leftPressed) {
+            eyal += 0.5;
+            me.style.right = eyal + "px";
+
+        }
+
+        if (topPressed) {
+            ido -= 0.5;
+            me.style.top = ido + "px";
+
+        }
+        if (bottomPressed) {
+            ido += 0.5;
+            me.style.top = ido + "px";
+
+        }
+    }
+    //לחיצות מקלדת
+    document.addEventListener('keydown', run);
+    function run(e) {
+        if (e.keyCode == 37 && leftpass && noga == 0) {
+            eyal += 15;
+            me.style.right = eyal + "px";
+
+        }
+
+        if (e.keyCode == 39 && rightpass && noga == 0) {
+            eyal += -15;
+            me.style.right = eyal + "px";
+
+        }
+
+        if (e.keyCode == 38 && toppass && noga == 0) {
+            ido += -15;
+            me.style.top = ido + "px";
+
+        }
+
+        if (e.keyCode == 40 && bottompass && noga == 0) {
+            ido += 15;
+            me.style.top = ido + "px";
+        }
+    }
+
+
+
+
+    setInterval(border, 1);
+    function border() {
+        //מציב גלובות למקשים
+        if (eyal == 610 && ido == 430 || eyal == 610 && ido == 415 || eyal == 610 && ido == 355 || eyal == 610 && ido == 340 || eyal == 610 && ido == 415 || eyal == 610 && ido == 295 || eyal == 610 && ido == 310 || eyal == 610 && ido == 325 || eyal == 520 && ido == 325) {
+            leftpass = false;
+        }
+        else {
+            leftpass = true;
+        }
+
+
+        if (eyal == 505 || eyal == 580 && ido == 325) {
+            rightpass = false;
+        }
+        else {
+            rightpass = true;
+        }
+
+
+        if (eyal == 745 && ido == 400 || eyal == 730 && ido == 400 || eyal == 715 && ido == 400 || eyal == 700 && ido == 400 || ido == 400 || eyal == 565 && ido == 310 || eyal == 550 && ido == 310 || eyal == 535 && ido == 310 || eyal == 625 && ido == 400 || eyal == 670 && ido == 400 || eyal == 655 && ido == 400 || eyal == 640 && ido == 400 || eyal == 685 && ido == 400) {
+            bottompass = false;
+        }
+        else {
+            bottompass = true;
+        }
+
+
+        if (eyal == 760 && ido == 370 || eyal == 745 && ido == 370 || eyal == 730 && ido == 370 || eyal == 715 && ido == 370 || eyal == 700 && ido == 370 || ido == 340 || eyal == 625 && ido == 370 || eyal == 640 && ido == 370 || eyal == 655 && ido == 370 || eyal == 670 && ido == 370 || eyal == 685 && ido == 370) {
+            toppass = false;
+        }
+        else {
+            toppass = true;
+        }
+
+    }
+
+
+
+
+    //מפתח לפתיחת השער
+    setInterval(openGate, 1);
+    function openGate() {
+        if (key.style.right == eyal + "px" && key.style.top == ido + "px" && itay) {
+            itay = false;
+            key.style.display = "none";
+            ring.play();
+            var open = setInterval(slowOpen, 10);
+            document.getElementById("intro").style.display = "none";
+            document.getElementById("intro1").style.display = "block";
+            clearInterval(gate);
+
+        }
+    }
+
+
+
+    //אינטרבל נפרד שמונע כניסה דרך השער והוא נעצר בהשגת המפתח
+    gate = setInterval(gateBorder, 1);
+    function gateBorder() {
+        if (eyal == 610 && ido == 400 || eyal == 610 && ido == 385 || eyal == 610 && ido == 370) {
+            leftpass = false;
+        }
+    }
+
+
+
+    //פותח את השער האדום
+    function slowOpen() {
+        if (redGatePos == 0) {
+            clearInterval(open);
+        }
+        else {
+            redGatePos--;
+            document.getElementById("gate").style.height = redGatePos + "px";
+        }
+    }
+
+
+    //מעדכן את כמות המטבעות
+    setInterval(coins, 1);
+    function coins() {
+        document.getElementById("score").innerHTML = scoreCoins;
+    }
+
+
+
+    //המלכודת והמוות הראשונים
+    setInterval(trap, 1800);
+    function trap() {
+        var trap = document.getElementById("traper");
+        if (traper.src.match("redblock.png") && ezra == 0) {
+            traper.src = "redborder.png";
+            clearInterval(red);
+            noga = 0;
+        }
+        else {
+            traper.src = "redblock.png";
+            red = setInterval(deadRed, 1);
+        }
+    }
+
+    function deadRed() {
+        if (eyal == 700 && ido == 370 || eyal == 700 && ido == 385 || eyal == 700 && ido == 400 || eyal == 715 && ido == 370 || eyal == 715 && ido == 385 ||
+        eyal == 715 && ido == 400 || eyal == 730 && ido == 370 || eyal == 730 && ido == 385 || eyal == 730 && ido == 400 || eyal == 745 && ido == 400 || eyal == 745 && ido == 385 || eyal == 745 && ido == 370) {
+            noga = 1;
+            ezra = 1;
+            gameOver.style.display = "block";
+            if (tal == 0) {
+                document.getElementById("gameOverMuzic").play();
+                tal = 1;
+            }
+        }
+    }
+
+
+
+
+
+    //המלכודת והמוות השניים
+    setInterval(trap1, 1000);
+    function trap1() {
+        var trap1 = document.getElementById("traper1");
+        if (traper1.src.match("redblock.png") && ezra == 0) {
+            traper1.src = "redborder.png";
+            clearInterval(red1);
+            noga = 0;
+        }
+        else {
+            traper1.src = "redblock.png";
+            red1 = setInterval(deadRed1, 1);
+        }
+    }
+
+
+    function deadRed1() {
+        if (eyal == 790 && ido == 370 || eyal == 790 && ido == 385 || eyal == 790 && ido == 400 || eyal == 805 && ido == 370 || eyal == 805 && ido == 385 ||
+        eyal == 805 && ido == 400 || eyal == 820 && ido == 370 || eyal == 820 && ido == 385 || eyal == 820 && ido == 400 || eyal == 835 && ido == 400 || eyal == 835 && ido == 385 || eyal == 835 && ido == 370) {
+            noga = 1;
+            ezra = 1;
+            gameOver.style.display = "block";
+            if (tal == 0) {
+                document.getElementById("gameOverMuzic").play();
+                tal = 1;
+            }
+        }
+    }
+
+
+    //המלכודת והמוות השלישיים
+    setInterval(trap2, 1400);
+    function trap2() {
+        var trap2 = document.getElementById("traper2");
+        if (traper2.src.match("redblock.png") && ezra == 0) {
+            traper2.src = "redborder.png";
+            clearInterval(red2);
+            noga = 0;
+        }
+        else {
+            traper2.src = "redblock.png";
+            red2 = setInterval(deadRed2, 1);
+        }
+    }
+
+
+    function deadRed2() {
+        if (eyal == 865 && ido == 370 || eyal == 865 && ido == 385 || eyal == 865 && ido == 400 || eyal == 880 && ido == 370 || eyal == 880 && ido == 385 ||
+        eyal == 880 && ido == 400 || eyal == 895 && ido == 370 || eyal == 895 && ido == 385 || eyal == 895 && ido == 400 || eyal == 910 && ido == 400 || eyal == 910 && ido == 385 || eyal == 910 && ido == 370) {
+            noga = 1;
+            ezra = 1;
+            gameOver.style.display = "block";
+            if (tal == 0) {
+                document.getElementById("gameOverMuzic").play();
+                tal = 1;
+            }
+        }
+    }
+    setInterval(nani, 1);
+    function nani() {
+        for (i = 1; i < 4; i++) {
+            var ids = "coin" + i;
+            var coin = document.getElementById(ids);
+            if (coin.style.right == eyal + "px" && coin.style.top == ido + "px" && coin.style.display == "block") {
+                document.getElementById("muzicCoin").play();
+                coin.style.display = "none";
+                scoreCoins++;
+
+            }
+        }
+    }
+
+
+
+
+
+
+    //אחרי שאתה מת לחץ על  rage ותופיע הודעה
+    function rage() {
+        alert("toxicyano! ;)")
+    }
+
+    //restart level
+    function again() {
+        location.reload();
+
+    }
+    // עזרה לדיווח X Y או במקרה שלי EYAL IDO
+    function help() {
+        alert(" eyal == " + eyal + " && ido == " + ido + " ||")
+
+    }
+
+
+
+</script>
+
+</body>
+</html>
+
